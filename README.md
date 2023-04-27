@@ -23,9 +23,11 @@
 - [Compiling to JavaScript, and Debugging with Source Maps](https://hacks.mozilla.org/2013/05/compiling-to-javascript-and-debugging-with-source-maps/)
 
 
-## 可视化工具
-- [source-map-visualization](https://sokra.github.io/source-map-visualization/)
-- [Source Map Visualization](https://evanw.github.io/source-map-visualization/)
+## 工具
+- [SourceMap 可视化工具1](https://sokra.github.io/source-map-visualization/)
+- [SourceMap 可视化工具2](https://evanw.github.io/source-map-visualization/)
+- [SourceMap 可视化工具3](http://sourcemapper.qfox.nl/)
+- [base64vlq 验证器](https://www.murzwin.com/base64vlq.html)
 
 
 ## 相关项目
