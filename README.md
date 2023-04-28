@@ -8,13 +8,12 @@
 - [sourcemap v3 proposal](https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/preview)
 - [source-map-rfc](https://github.com/source-map/source-map-rfc)
 - [source-map.github.io](http://source-map.github.io/)
-- [mozilla.dev.js-sourcemap mailing list](https://groups.google.com/forum/#!forum/mozilla.dev.js-sourcemap)
+- [mozilla.dev.js-sourcemap mailing list](https://groups.google.com/forum/#!forum/mozilla.dev.js-sourcemap) (好像已经不活跃了)
 
 
 ## 文章
-- [介绍SourceMap的一篇经典文章(非常详细，但某些内容可能过时了)](https://developer.chrome.com/blog/sourcemaps/#the-anatomy-of-a-source-map)
+- [介绍SourceMap的一篇经典文章](https://developer.chrome.com/blog/sourcemaps/#the-anatomy-of-a-source-map) (非常详细，但某些内容可能过时了)
 - [web.dev上介绍SourceMap的另一篇文章](https://web.dev/source-maps/)
-- [x_google_ignoreList 扩展](https://developer.chrome.com/articles/x-google-ignore-list/)
 - [SourceMap 原理(中文)](https://daodaolee.cn/posts/sourcemap.html)
 - [VLQ编码规则](https://github.com/D-kylin/note/blob/master/VLQ%E7%BC%96%E7%A0%81.md)
 - [深入浅出之 SourceMap](https://juejin.cn/post/7023537118454480904)
@@ -35,6 +34,13 @@
 ## 相关项目
 - [mozilla/source-map](https://github.com/mozilla/source-map/)
 - [source-map-spec](https://github.com/source-map/source-map-spec)
+- [source-map-rfc](https://github.com/source-map/source-map-rfc)
+
+
+## x_google_ignoreList 扩展
+- [x_google_ignoreList 扩展](https://developer.chrome.com/articles/x-google-ignore-list/)
+- [Modern web debugging in Chrome DevTools](https://developer.chrome.com/blog/devtools-modern-web-debugging/)
+- [Case Study: Better Angular Debugging with DevTools](https://developer.chrome.com/blog/devtools-better-angular-debugging/)
 
 
 ## Tools that generate source maps
