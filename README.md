@@ -3,9 +3,9 @@
 
 
 ## Spec & Standards
+- [source-map-sepc](https://source-map.github.io/source-map-spec/)
 - [sourcemap v2 proposal](https://docs.google.com/document/d/1xi12LrcqjqIHTtZzrzZKmQ3lbTv9mKrN076UB-j3UZQ/preview)
 - [sourcemap v3 proposal](https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/preview)
-- [source-map-spec](https://github.com/source-map/source-map-spec)
 - [source-map-rfc](https://github.com/source-map/source-map-rfc)
 - [source-map.github.io](http://source-map.github.io/)
 - [mozilla.dev.js-sourcemap mailing list](https://groups.google.com/forum/#!forum/mozilla.dev.js-sourcemap)
@@ -34,6 +34,7 @@
 
 ## 相关项目
 - [mozilla/source-map](https://github.com/mozilla/source-map/)
+- [source-map-spec](https://github.com/source-map/source-map-spec)
 
 
 ## Tools that generate source maps
