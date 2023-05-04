@@ -17,7 +17,7 @@
 - [介绍SourceMap的一篇经典文章](https://developer.chrome.com/blog/sourcemaps/#the-anatomy-of-a-source-map) (非常详细，但某些内容可能过时了)
 - [web.dev上介绍SourceMap的另一篇文章](https://web.dev/source-maps/)
 - [SourceMap 原理(中文)](https://daodaolee.cn/posts/sourcemap.html)
-- [VLQ编码规则](https://github.com/D-kylin/note/blob/master/VLQ%E7%BC%96%E7%A0%81.md)
+- [source map 的原理探究](https://github.com/wayou/wayou.github.io/issues/9)
 - [深入浅出之 SourceMap](https://juejin.cn/post/7023537118454480904)
 - [SourceMap 是个啥](https://juejin.cn/post/6844903926202892295)
 - [源码映射(SourceMap)](https://www.bilibili.com/read/cv11547448)
