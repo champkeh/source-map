@@ -20,7 +20,6 @@
 - [VLQ编码规则](https://github.com/D-kylin/note/blob/master/VLQ%E7%BC%96%E7%A0%81.md)
 - [深入浅出之 SourceMap](https://juejin.cn/post/7023537118454480904)
 - [SourceMap 是个啥](https://juejin.cn/post/6844903926202892295)
-- [聊一聊 SourceMap](https://zhuanlan.zhihu.com/p/475964893)
 - [源码映射(SourceMap)](https://www.bilibili.com/read/cv11547448)
 - [SourceMap原理分析&vlq](http://www.qiutianaimeili.com/html/page/2019/05/89jrubx1soc.html)
 - [Compiling to JavaScript, and Debugging with Source Maps](https://hacks.mozilla.org/2013/05/compiling-to-javascript-and-debugging-with-source-maps/)
