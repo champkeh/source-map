@@ -1,6 +1,8 @@
 # source-map
 关于source-map的一些资料
 
+> 部分内容来自于 [ryanseddon/source-map wiki](https://github.com/ryanseddon/source-map/wiki/Source-maps:-languages,-tools-and-other-info)
+
 
 ## Spec & Standards
 - [source-map-sepc](https://source-map.github.io/source-map-spec/)
