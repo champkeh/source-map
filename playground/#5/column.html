@@ -1,0 +1,37 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>Column Test</title>
+<script>
+function fail() {
+  throw new Error();
+}
+
+function logColumn(c, e) {
+  const lines = e.stack.split(/\r?\n/g);
+  if (lines[0] === 'Error') {
+    lines.shift();
+  }
+  console.log(c, parseInt(lines[1].match(/:\d+:(\d+)/)[1]));
+}
+
+try {
+  /* xxxxx */fail();
+} catch (e) {
+  logColumn("x", e);
+}
+try {
+  /* ☃️☃️☃️☃️☃️ */fail();
+} catch (e) {
+  logColumn("☃️", e);
+}
+try {
+  /* 🔥🔥🔥🔥🔥 */fail();
+} catch (e) {
+  logColumn("🔥", e);
+}
+try {
+  /* 👩‍👩‍👧👩‍👩‍👧👩‍👩‍👧👩‍👩‍👧👩‍👩‍👧 */fail();
+} catch (e) {
+  logColumn("👩‍👩‍👧", e);
+}
+</script>

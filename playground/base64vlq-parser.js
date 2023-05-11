@@ -77,3 +77,16 @@ function encodeInteger(num) { //数字转 Base64 核心代码
 
     return result;
 }
+
+console.log(decode('EAEE'))
+
+const table = []
+for (let i = 0; i < 64; i++) {
+    table.push({
+        value: i,
+        binary: ('000000'+i.toString(2)).slice(-6),
+        '&32': i & 32,
+        alpha: integerToChar[i],
+    })
+}
+console.table(table)
