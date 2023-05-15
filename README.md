@@ -14,6 +14,7 @@
 
 
 ## 文章
+- [SourceMap原理分析&vlq](http://www.qiutianaimeili.com/html/page/2019/05/89jrubx1soc.html)
 - [介绍SourceMap的一篇经典文章](https://developer.chrome.com/blog/sourcemaps/#the-anatomy-of-a-source-map) (非常详细，但某些内容可能过时了)
 - [web.dev上介绍SourceMap的另一篇文章](https://web.dev/source-maps/)
 - [SourceMap 原理(中文)](https://daodaolee.cn/posts/sourcemap.html)
@@ -21,7 +22,6 @@
 - [深入浅出之 SourceMap](https://juejin.cn/post/7023537118454480904)
 - [SourceMap 是个啥](https://juejin.cn/post/6844903926202892295)
 - [源码映射(SourceMap)](https://www.bilibili.com/read/cv11547448)
-- [SourceMap原理分析&vlq](http://www.qiutianaimeili.com/html/page/2019/05/89jrubx1soc.html)
 - [Compiling to JavaScript, and Debugging with Source Maps](https://hacks.mozilla.org/2013/05/compiling-to-javascript-and-debugging-with-source-maps/)
 
 
