@@ -1,3 +1,24 @@
+/**
+ * @typedef {object} Line 行编码
+ * @property {number} index 行号，基于0
+ * @property {number[]} segments 段编码
+ */
+
+/**
+ * @typedef {object} SingleDecimalEncoded 单个数字的编码结果
+ * @property {string} bits 比特分布
+ * @property {string} value 编码值
+ * @property {string[]} units 编码单元
+ */
+
+/**
+ * @typedef {object} MultiDecimalEncoded 多个数字的编码结果
+ * @property {string[]} bits 比特分布
+ * @property {string} value 编码值
+ * @property {string[]} units 编码单元
+ */
+
+
 // base64 转换表
 const Index2CharMap = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
 const Char2IndexMap = Index2CharMap.split('').reduce((p, c, i) => {
@@ -9,10 +30,7 @@ const Char2IndexMap = Index2CharMap.split('').reduce((p, c, i) => {
 /**
  * 编码单个数字
  * @param {number} decimal 被编码的数字
- * @return {Object} 编码结果
- * @property {string} bits 比特分布
- * @property {string} value 编码值
- * @property {string[]} units 编码单元
+ * @return {SingleDecimalEncoded} 编码结果
  */
 function encodeDecimal(decimal) {
     if (typeof decimal !== 'number') {
@@ -48,10 +66,7 @@ function encodeDecimal(decimal) {
 /**
  * 编码多个数字
  * @param {number[]} decimalArr 被编码的数字数组
- * @return {Object} 编码结果
- * @property {string} bits 比特分布
- * @property {string} value 编码值
- * @property {string[]} units 编码单元
+ * @return {MultiDecimalEncoded} 编码结果
  */
 function encodeDecimalArray(decimalArr) {
     const decimalEncodeArr = decimalArr.map(d => encodeDecimal(d))
@@ -65,10 +80,7 @@ function encodeDecimalArray(decimalArr) {
 /**
  * 编码
  * @param {number|number[]} val 需要编码的数字
- * @return {Object} 编码结果
- * @property {string} bits 比特分布
- * @property {string} value 编码值
- * @property {string[]} units 编码单元
+ * @return {SingleDecimalEncoded | MultiDecimalEncoded} 编码结果
  */
 function encode(val) {
     if (typeof val === 'number') {
@@ -87,6 +99,8 @@ function encode(val) {
  * @return {number[]}
  */
 function decodeSegment(segment) {
+    if (!segment || !segment.trim()) return []
+
     const units = segment.split('').map(c => Char2IndexMap[c])
     let bits = ''
     let sign = 1
@@ -111,6 +125,36 @@ function decodeSegment(segment) {
     return result
 }
 
+/**
+ * 解码 SourceMap V3 的 mappings 字段
+ * @param {string} mappings
+ * @return {Line[]}
+ */
+function decodeMappings(mappings) {
+    const lines = []
+    mappings.split(';').forEach((lineStr, index) => {
+        const line = {index, segments: []}
+        if (lineStr.trim()) {
+            line.segments = lineStr.split(',').map(seg => decodeSegment(seg))
+        }
+        lines.push(line)
+    })
+    return lines
+}
+
+/**
+ * 解码 mappings
+ * @param mappings
+ * @return {number[]|Line[]}
+ */
+function decode(mappings) {
+    if (/[;,]/.test(mappings)) {
+        return decodeMappings(mappings)
+    } else {
+        return decodeSegment(mappings)
+    }
+}
+
 // console.log(encode(42))
 // console.log(encode([0,11,2,9,7,6,2,4,-9,11,7,-8,5,9]))
 // console.log(encode([7]))
@@ -120,6 +164,8 @@ function decodeSegment(segment) {
 // console.log(encode(1))
 // console.log(encode([10, 1200]))
 // console.log(encode([1, 2, 3, 4]))
-// console.log(decodeSegment('O'))
-// console.log(decodeSegment('UgrC'))
-console.log(decodeSegment('DECODEME'))
+// console.log(decode('O'))
+// console.log(decode('UgrC'))
+// console.log(decode('DECODEME'))
+// console.log(decode(';;;;EAEE,EAAE,EAAC,CAAE;ECQY,UACC'))
+const a = decodeMappings('23434')[0]
