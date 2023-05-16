@@ -29,7 +29,8 @@
 - [SourceMap 可视化工具1](https://sokra.github.io/source-map-visualization/)
 - [SourceMap 可视化工具2](https://evanw.github.io/source-map-visualization/)
 - [SourceMap 可视化工具3](http://sourcemapper.qfox.nl/)
-- [base64vlq 验证器](https://www.murzwin.com/base64vlq.html)
+- [base64vlq 验证器1](https://www.murzwin.com/base64vlq.html)
+- [base64vlq 验证器2(自己实现的)](https://champkeh.github.io/base64-vlq/)
 
 
 ## 相关项目
