@@ -1,3 +1,5 @@
+// region jsdoc类型定义
+
 /**
  * @typedef {object} Line 行编码
  * @property {number} index 行号，基于0
@@ -26,6 +28,9 @@
  * @property {number} generateLine 生成文件的行号
  * @property {number} generateColumn 生成文件的列号
  */
+
+// endregion
+
 
 // base64 转换表
 const Index2CharMap = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
@@ -163,21 +168,6 @@ function decode(mappings) {
     }
 }
 
-// console.log(encode(42))
-// console.log(encode([0,11,2,9,7,6,2,4,-9,11,7,-8,5,9]))
-// console.log(encode([7]))
-// console.log(encode(10))
-// console.log(encode(1200))
-// console.log(encode(-17))
-// console.log(encode(1))
-// console.log(encode([10, 1200]))
-// console.log(encode([1, 2, 3, 4]))
-// console.log(decode('O'))
-// console.log(decode('UgrC'))
-// console.log(decode('DECODEME'))
-// console.log()
-// const res = decode(';EAEE,EAAE,EAAC,CAAE;ECQY,UACC')
-// console.log(res)
 
 /**
  * 解释 mappings 字段
@@ -196,4 +186,26 @@ function interpretMappings(lines) {
     })
 }
 
-// console.log(interpretMappings(res))
+if (typeof module === 'object' && typeof module.exports === 'object') {
+    // nodejs 环境
+    module.exports = {
+        encodeDecimal,
+        encodeDecimalArray,
+        encode,
+        decodeSegment,
+        decodeMappings,
+        decode,
+        interpretMappings,
+    }
+} else if (typeof window === 'object') {
+    // browser 环境
+    window.BASE64VLQ = {
+        encodeDecimal,
+        encodeDecimalArray,
+        encode,
+        decodeSegment,
+        decodeMappings,
+        decode,
+        interpretMappings,
+    }
+}
