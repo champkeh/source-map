@@ -18,6 +18,14 @@
  * @property {string[]} units 编码单元
  */
 
+/**
+ * @typedef {object} ParsedSegment 位置映射
+ * @property {number} originLine 源文件的行号
+ * @property {number} originColumn 源文件的列号
+ * @property {number} originSource 源文件索引
+ * @property {number} generateLine 生成文件的行号
+ * @property {number} generateColumn 生成文件的列号
+ */
 
 // base64 转换表
 const Index2CharMap = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
@@ -167,5 +175,25 @@ function decode(mappings) {
 // console.log(decode('O'))
 // console.log(decode('UgrC'))
 // console.log(decode('DECODEME'))
-// console.log(decode(';;;;EAEE,EAAE,EAAC,CAAE;ECQY,UACC'))
-const a = decodeMappings('23434')[0]
+// console.log()
+// const res = decode(';EAEE,EAAE,EAAC,CAAE;ECQY,UACC')
+// console.log(res)
+
+/**
+ * 解释 mappings 字段
+ * @param {Line[]} lines Base64VLQ 解码的原始结果
+ * @return {ParsedSegment[][]} 相对位置
+ */
+function interpretMappings(lines) {
+    return lines.map(line => {
+        return line.segments.map(seg => ({
+            originLine: seg[2],
+            originColumn: seg[3],
+            originSource: seg[1],
+            generateLine: line.index,
+            generateColumn: seg[0],
+        }))
+    })
+}
+
+// console.log(interpretMappings(res))
